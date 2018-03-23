@@ -1,0 +1,12 @@
+# Example vmware_dns_config command from Ansible Playbooks
+- name: Configure ESXi hostname and DNS servers
+  local_action:
+    module: vmware_dns_config
+    hostname: '{{ hostname }}'
+    username: '{{ username }}'
+    password: '{{ password }}'
+    change_hostname_to: '{{ change_hostname_to }}'
+    domainname: '{{ domainname }}'
+    dns_servers:
+      - '{{ primary_dns_server }}'
+    validate_certs: False
