@@ -1,4 +1,7 @@
 - name: this is a hello world example
-  tasks:
-  - name: create a file called '/home/ansible/testMauroFile.txt' with the content 'hello world!'.
-    copy: content="hello world!\n" dest=/home/ansible/testMauroFile.txt
+  copy:
+    src: ./config.cfg
+    dest: /home/ansible/config.cfg
+    owner: ansible
+    group: ansible
+    mode: 0644
